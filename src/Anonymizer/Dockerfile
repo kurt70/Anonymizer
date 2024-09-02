@@ -16,5 +16,9 @@ COPY app.py app.py
 # Installer spaCy-modellen
 RUN python -m spacy download en_core_web_sm
 
+# Installer transformers og modellen
+RUN pip install --no-cache-dir transformers
+RUN python -c "from transformers import pipeline; pipeline('ner', model='NordicBERT')"
+
 # Sett kommando for å kjøre anonymisering
 CMD ["python", "anonymizer/anonymize.py"]

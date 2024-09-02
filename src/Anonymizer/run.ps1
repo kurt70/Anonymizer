@@ -1,2 +1,1 @@
-# Kjør Docker-containeren
-docker run -v ${PWD}\applications:/app/applications -v ${PWD}\anonymized:/app/anonymized anonymizer-api
+docker run -it -v .\applications:/app/applications -v .\anonymized:/app/anonymized -v .\anonymizer:/app/anonymizer anonymizer-api
